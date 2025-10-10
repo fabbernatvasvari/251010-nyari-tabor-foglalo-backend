@@ -38,6 +38,18 @@
 					   HorizontalAlignment="Center"
 					   FontSize="20"/>
 		</Grid>
+		<DockPanel>
+			<Menu>
+				<MenuItem Header="Főmenüpont">
+					<MenuItem Header="Vezérlőpult" />
+					<MenuItem Header="Diákok" />
+					<MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanalViewCommand}"></MenuItem>
+					<MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}" ></MenuItem>
+					<MenuItem Header="Osztályok" />
+				</MenuItem>
+			</Menu>
+		</DockPanel>
+		<ContentControl Content="{Binding CurrentView}" />
 		<Label>Táborok</Label>
 		<ListView ItemsSource="{Binding Camps}"
                   SelectedItem="{Binding SelectedCamp, Mode=TwoWay}">

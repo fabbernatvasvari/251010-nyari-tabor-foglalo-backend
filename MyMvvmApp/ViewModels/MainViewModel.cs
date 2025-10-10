@@ -12,12 +12,23 @@ namespace MyMvvmApp.ViewModels
 
         private readonly CampRepo _campRepo = new CampRepo();
         private Camp? _selectedCamp;
-
+        private readonly object _studentViewModel = new object();
+        private readonly object _schoolClassViewModel = new object();
+        private readonly object _controlPanelViewModel = new object();
         public ObservableCollection<Camp> Camps { get; }
+
+
+        private object _currentView = new object();
+        public object CurrentView
+        {
+            get => _currentView;
+            set => SetProperty(ref _currentView, value);
+        }
 
         public MainViewModel()
         {
             Camps = new ObservableCollection<Camp>(_campRepo.GetAll());
+            _currentView = _controlPanelViewModel;
         }
 
         [RelayCommand(CanExecute = nameof(CanDeleteSelected))]
@@ -46,6 +57,20 @@ namespace MyMvvmApp.ViewModels
         {
             get => _message;
             set => SetProperty(ref _message, value);
+        }
+
+
+
+        [RelayCommand]
+        private void ShowControlPanalView()
+        {
+            CurrentView = _controlPanelViewModel;
+        }
+
+        [RelayCommand]
+        private void ShowStudentView()
+        {
+            CurrentView = _studentViewModel;
         }
     }
 }
