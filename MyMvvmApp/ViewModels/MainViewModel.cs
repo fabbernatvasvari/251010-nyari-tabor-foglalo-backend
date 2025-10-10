@@ -16,21 +16,21 @@ namespace MyMvvmApp.ViewModels
         //[NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
         private Camp? selectedCamp;
 
-        public ObservableCollection<Camp> Classes { get; }
+        public ObservableCollection<Camp> Camps { get; }
 
         public MainViewModel()
         {
             
-            Classes = new ObservableCollection<Camp>(_campRepo.GetAll());
+            Camps = new ObservableCollection<Camp>(_campRepo.GetAll());
         }
 
         [RelayCommand(CanExecute = nameof(CanDeleteSelected))]
         private void DeleteSelected()
         {
-            if (selectedCamp  is null) return;
+            if (selectedCamp is null) return;
 
             _campRepo.Remove(selectedCamp);
-            Classes.Remove(selectedCamp);
+            Camps.Remove(selectedCamp);
             selectedCamp = null;
         }
 
