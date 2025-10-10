@@ -3,21 +3,28 @@ namespace MyMvvmApp.Models
 {
     public class Camp
     {
-        private int _id;
         private static int _nextId = 1;
 
-        public DateTime startDate = DateTime.Today;
-        public DateTime endDate = DateTime.Today.AddDays(7);
+        public int Id { get; }
+
+        private DateTime _startDate { get; set; } = DateTime.Today;
+        private DateTime _endDate { get; set; } = DateTime.Today.AddDays(7);
+
         public Camp()
         {
-            _id = _nextId++;
+            Id = _nextId++;
         }
 
         public Camp(DateTime startDate, DateTime endDate)
         {
-            _id = _nextId++;
-            this.startDate = startDate;
-            this.endDate = endDate;
+            Id = _nextId++;
+            _startDate = startDate;
+            _endDate = endDate;
+        }
+
+        public override string ToString()
+        {
+            return $"{_startDate:yyyy-MM-dd} → {_endDate:yyyy-MM-dd}";
         }
     }
 }
