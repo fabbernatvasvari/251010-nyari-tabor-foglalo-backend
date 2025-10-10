@@ -4,7 +4,7 @@ namespace MyMvvmApp.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private string _message = "Szia Nyári Tábor Foglaló!";
+        private string _message = "Üdvözöllek a Nyári Tábor Foglaló asztali alkalmazásban. Kezdésnek hozz létre egy tábort!";
 
         public string Message
         {
