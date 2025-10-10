@@ -10,6 +10,14 @@
 	<Window.DataContext>
 		<viewmodel:MainViewModel />
 	</Window.DataContext>
+	<Window.Resources>
+		<!--<DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
+			<view:ControlPanelView />
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type viewmodel:StudentViewModel}">
+			<view:StudentView />
+		</DataTemplate>-->
+	</Window.Resources>
 	<StackPanel Margin="10">
 		<Grid>
 			<TextBlock Text="{Binding Message}"
