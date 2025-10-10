@@ -1,1 +1,2 @@
-to this accounts nyari-tabor-foglalo
+# C# backend
+C# az egyéni projektmunkámhoz, a Nyári Tábor Foglalóhoz.
