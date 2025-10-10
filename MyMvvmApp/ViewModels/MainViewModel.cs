@@ -6,9 +6,56 @@ using System.Collections.ObjectModel;
 
 namespace MyMvvmApp.ViewModels
 {
-    public partial class MainViewModel : INotifyPropertyChanged
+    public partial class MainViewModel : INotifyPropertyChanged//, ObservableObject
     {
         private string _message = "Üdvözöllek a Nyári Tábor Foglaló asztali alkalmazásban. Kezdésnek hozz létre egy tábort!";
+
+        private readonly CampRepo _campRepo = new CampRepo();
+
+        //[ObservableProperty]
+        //[NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
+        private Camp? selectedCamp;
+
+        public ObservableCollection<Camp> Classes { get; }
+
+        public MainViewModel()
+        {
+            
+            Classes = new ObservableCollection<Camp>(_campRepo.GetAll());
+        }
+
+        [RelayCommand(CanExecute = nameof(CanDeleteSelected))]
+        private void DeleteSelected()
+        {
+            if (selectedCamp  is null) return;
+
+            _campRepo.Remove(selectedCamp);
+            Classes.Remove(selectedCamp);
+            selectedCamp = null;
+        }
+
+        /// <summary>
+        /// Megadja mikor lehet törölni az osztályt
+        /// </summary>
+        /// <returns>true ha az osztály létszáma nulla, vagyis ha nincs diák az osztályba</returns>
+        private bool CanDeleteSelected()
+        {
+            return true;
+        }
+
+        public Camp? SelectedCamp
+        {
+            get => selectedCamp;
+            set
+            {
+                if (selectedCamp != value)
+                {
+                    selectedCamp = value;
+                    OnPropertyChanged(nameof(SelectedCamp));
+                    DeleteSelectedCommand.NotifyCanExecuteChanged();
+                }
+            }
+        }
 
         public string Message
         {
