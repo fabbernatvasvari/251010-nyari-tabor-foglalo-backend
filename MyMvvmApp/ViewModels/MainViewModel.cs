@@ -4,7 +4,7 @@ namespace MyMvvmApp.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private string _message = ""Hello, MVVM!"";
+        private string _message = "Szia Nyári Tábor Foglaló!";
 
         public string Message
         {
