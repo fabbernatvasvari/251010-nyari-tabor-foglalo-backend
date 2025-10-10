@@ -20,6 +20,19 @@
 	</Window.Resources>
 	<StackPanel Margin="10">
 		<Grid>
+			<Menu>
+				<MenuItem Header="_File">
+					<MenuItem Header="_New" />
+					<MenuItem Header="_Open" />
+					<Separator />
+					<MenuItem Header="_Exit" />
+				</MenuItem>
+				<MenuItem Header="_Edit">
+					<MenuItem Header="_Cut" />
+					<MenuItem Header="_Copy" />
+					<MenuItem Header="_Paste" />
+				</MenuItem>
+			</Menu>
 			<TextBlock Text="{Binding Message}"
 					   VerticalAlignment="Center"
 					   HorizontalAlignment="Center"
