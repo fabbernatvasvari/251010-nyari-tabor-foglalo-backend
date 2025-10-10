@@ -1,2 +1,2 @@
-# C# backend
-C# az egyéni projektmunkámhoz, a Nyári Tábor Foglalóhoz.
+# C# .Net backend
+C# .Net Wpf Mvvm UI és konzolos felület az egyéni projektmunkámhoz, a Nyári Tábor Foglalóhoz.
