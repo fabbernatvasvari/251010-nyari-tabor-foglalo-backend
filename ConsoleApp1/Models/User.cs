@@ -21,6 +21,15 @@
             _password = password;
         }
 
+        public User(object name, object age, object email, object password)
+        {
+            _id = _nextId++;
+            _name = name.ToString();
+            _birthDate = DateOnly.FromDateTime(DateTime.Now.AddYears(-Convert.ToInt32(age))); // Addyears hozzáad `-age` évet == kivon `age` évet.
+            _email = email.ToString();
+            _password = password.ToString();
+        }
+
         public int Id { get => _id; }
         public string Name { get => _name; set => _name = value; }
         public DateOnly BirthDate { get => _birthDate; private set => _birthDate = value; }

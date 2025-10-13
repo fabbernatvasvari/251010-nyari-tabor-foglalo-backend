@@ -15,6 +15,6 @@ namespace ConsoleApp1.Shared.Models
         public Camper(string name, DateOnly birthDate) : base(name, birthDate)
         {
         }
-        public List<Erzekenyseg> Erzekenysegek { get => _camps; set => _camps = value; }
+        public List<Erzekenyseg> Erzekenysegek { get; set; }
     }
 }

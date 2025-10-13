@@ -13,24 +13,23 @@ namespace ConsoleApp1.Shared
 
         static void Main(string[] args)
         {
+            User[] users = new User[4]{
+             new User( "Adam", 18, "Adam@gmail.com", "adam" ),
+            new User(  "Bob", 17, "bob@gmail.com",  "bob"),
+            new User("kutya", 6, "kutya@gmail.com",  "kutya"),
+            new User(  "allat", 3, "allat@gmail.com",  "allat"),
+            };
 
-            //User[] users = new User[4]{
-            // new User( "Adam", 18, "Adam@gmail.com", "adam" ),
-            //new User(  "Bob", 17, "bob@gmail.com",  "bob"),
-            //new User("kutya", 6, "kutya@gmail.com",  "kutya"),
-            //new User(  "allat", 3, "allat@gmail.com",  "allat"),
-            //};
-
-            //string host = "localhost";
-            //int PORT = 3000;
-            //App app = new App();
+            string host = "localhost";
+            int PORT = 3000;
+            App app = new App();
 
 
-            //Server server = new Server(host, PORT);
-            //server.Start();
+            Server server = new Server(host, PORT);
+            server.Start();
 
-            //Child child = new Child("Gipsz Jákob", new DateOnly(2017, 5, 15));
-            //Console.WriteLine(child);
+            Child child = new Child("Gipsz Jákob", new DateOnly(2017, 5, 15));
+            Console.WriteLine(child);
         }
     }
 }

@@ -5,12 +5,13 @@ namespace ConsoleApp1
     {
         private string _myHttpRequest = null;
         
-        HttpBody Body = new HttpBody();
+        public HttpBody Body = new HttpBody();
+       
+        public Params Parameters = new Params();
         public HttpRequest() {
-            Params Params = new Params();
+          
         }   
         
         public string MyHttpRequest { get => _myHttpRequest; set => _myHttpRequest = value; }
-        
     }
 }
