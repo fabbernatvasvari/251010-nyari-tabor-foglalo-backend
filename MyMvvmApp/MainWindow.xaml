@@ -47,10 +47,9 @@
 		<DockPanel>
 			<Menu x:Name="campContextMenu2">
 				<MenuItem Header="Főmenüpont">
-					<MenuItem Header="Vezérlőpult" />
-					<MenuItem Header="Diákok" />
-					<MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanalViewCommand}"></MenuItem>
-					<MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}" ></MenuItem>
+					<MenuItem Header="Táborok böngészése" Command="{Binding ShowCampsBrowserViewCommand}" ></MenuItem>
+                    <MenuItem Header="Tábor létrehozása" Command="{Binding ShowCampCUDViewCommand}"></MenuItem>
+                    <MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanelViewCommand}"></MenuItem>
 					<MenuItem Header="Osztályok" />
 				</MenuItem>
 			</Menu>
@@ -72,5 +71,8 @@
 		<Button Content="Törlés"
                 Command="{Binding DeleteSelectedCommand}"
                 Margin="0,10,0,0" />
-	</StackPanel>
+        <Grid>
+            <Button Content="Kattints rám!" Width="120" Height="30" />
+        </Grid>
+    </StackPanel>
 </Window>
