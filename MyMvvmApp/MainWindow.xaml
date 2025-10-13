@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:viewmodel="clr-namespace:MyMvvmApp.ViewModels"
         xmlns:local="clr-namespace:MyMvvmApp"
+		xmlns:viewmodel="clr-namespace:MyMvvmApp.ViewModels"
         mc:Ignorable="d"
         Title="Nyári Tábor Foglaló desktop" Height="900" Width="1600">
 	<Window.DataContext>
@@ -34,7 +34,7 @@
 					   FontSize="20"/>
 		</Grid>
 		<DockPanel>
-			<Menu x:Name="campContextMenu">
+			<Menu x:Name="campContextMenu2">
 				<MenuItem Header="Főmenüpont">
 					<MenuItem Header="Vezérlőpult" />
 					<MenuItem Header="Diákok" />
