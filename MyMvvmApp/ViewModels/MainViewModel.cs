@@ -63,13 +63,19 @@ namespace MyMvvmApp.ViewModels
 
 
         [RelayCommand]
-        private void ShowControlPanalView()
+        private void ShowControlPanelView()
         {
             CurrentView = _controlPanelUserControl;
         }
 
         [RelayCommand]
-        private void ShowStudentView()
+        private void ShowCampsBrowserView()
+        {
+            CurrentView = _campsBrowserPage;
+        }
+
+        [RelayCommand]
+        private void ShowCampCUDView()
         {
             CurrentView = _campCUDPage;
         }

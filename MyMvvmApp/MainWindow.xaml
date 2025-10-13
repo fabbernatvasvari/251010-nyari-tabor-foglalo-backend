@@ -14,6 +14,12 @@
 		<viewmodel:MainViewModel />
 	</Window.DataContext>
 	<Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:CampsBrowserViewModel}">
+            <views:CampsBrowser />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:CampCUDViewModel}">
+            <views:CampCUD />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
             <view:ControlPanelView />
         </DataTemplate>
