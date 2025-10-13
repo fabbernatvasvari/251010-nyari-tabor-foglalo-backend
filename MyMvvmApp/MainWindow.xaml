@@ -6,7 +6,7 @@
 		xmlns:viewmodel="clr-namespace:MyMvvmApp.ViewModels"
         xmlns:local="clr-namespace:MyMvvmApp"
         mc:Ignorable="d"
-        Title="Nyári Tábor Foglaló desktop" Height="800" Width="1200">
+        Title="Nyári Tábor Foglaló desktop" Height="900" Width="1600">
 	<Window.DataContext>
 		<viewmodel:MainViewModel />
 	</Window.DataContext>

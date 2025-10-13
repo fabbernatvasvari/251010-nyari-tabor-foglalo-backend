@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MyMvvmApp.ViewModels
 {
     /// <summary>
-    /// Interaction logic for ControlPanelViewModel.xaml
+    /// Interaction logic for CampCUDPage.xaml
     /// </summary>
-    public partial class ControlPanelViewModel : Window
+    public partial class CampCUDPage : Window
     {
-        public ControlPanelViewModel()
+        public CampCUDPage()
         {
             InitializeComponent();
         }
