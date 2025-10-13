@@ -11,9 +11,7 @@
 		<viewmodel:MainViewModel />
 	</Window.DataContext>
 	<Window.Resources>
-        <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
-            <view:ControlPanelView />
-        </DataTemplate>
+
     </Window.Resources>
 	<StackPanel Margin="10">
 		<Grid>

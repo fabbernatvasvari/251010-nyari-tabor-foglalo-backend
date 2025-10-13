@@ -7,7 +7,7 @@ namespace ConsoleApp1
         
         public HttpBody Body = new HttpBody();
        
-        public Params Parameters = new Params();
+        private Params Parameters = new Params();
         public HttpRequest() {
           
         }   
