@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyMvvmApp"
 		xmlns:viewmodel="clr-namespace:MyMvvmApp.ViewModels"
+        xmlns:vm="clr-namespace:MyMvvmApp.ViewModels"
+        xmlns:model="clr-namespace:MyMvvmApp.Models"
+        xmlns:views="clr-namespace:MyMvvmApp.Views"
         mc:Ignorable="d"
         Title="Nyári Tábor Foglaló desktop" Height="900" Width="1600">
 	<Window.DataContext>
 		<viewmodel:MainViewModel />
 	</Window.DataContext>
 	<Window.Resources>
-
+        <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
+            <view:ControlPanelView />
+        </DataTemplate>
     </Window.Resources>
 	<StackPanel Margin="10">
 		<Grid>
