@@ -28,6 +28,11 @@ namespace MyMvvmApp.Models
             _endDate = endDate;
         }
 
+        public static void ResetIdCounter()
+        {
+            _nextId = 1;
+        }
+
         public override string ToString()
         {
             return $"{_startDate:yyyy-MM-dd} → {_endDate:yyyy-MM-dd}";
