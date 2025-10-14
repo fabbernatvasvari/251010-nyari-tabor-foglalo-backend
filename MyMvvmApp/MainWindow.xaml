@@ -21,7 +21,7 @@
             <views:CampCUD />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
-            <view:ControlPanelView />
+            <views:ControlPanelView />
         </DataTemplate>
     </Window.Resources>
 	<StackPanel Margin="10">
@@ -57,7 +57,7 @@
 		</DockPanel>
 		<ContentControl Content="{Binding CurrentView}" />
 		<Label>Táborok</Label>
-		<ListView BoundingRectangle="net"  ItemsSource="{Binding Camps}"
+		<ListView ItemsSource="{Binding Camps}"
                   SelectedItem="{Binding SelectedCamp, Mode=TwoWay}">
 			<ListView.View>
 				<GridView>

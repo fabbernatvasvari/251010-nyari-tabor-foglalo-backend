@@ -15,5 +15,13 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 	</ItemGroup>
-	
+
+	<ItemGroup>
+	  <Compile Update="Views\ControlPanelView.xaml.cs">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Compile>
+	</ItemGroup>
+
+
+
 </Project>

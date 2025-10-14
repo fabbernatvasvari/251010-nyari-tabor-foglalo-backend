@@ -14,10 +14,10 @@ namespace MyMvvmApp;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
-public partial class MainWindow : Window
+public partial class PlaceholderMainWindow : Window
 {
-    public MainWindow()
+    public PlaceholderMainWindow()
     {
-        InitializeComponent();
+        
     }
 }
