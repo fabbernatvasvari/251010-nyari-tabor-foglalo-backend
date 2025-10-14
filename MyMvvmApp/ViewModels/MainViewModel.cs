@@ -13,9 +13,6 @@ namespace MyMvvmApp.ViewModels
 
         private readonly CampRepo _campRepo = new CampRepo();
         private Camp? _selectedCamp;
-        private readonly CampCUDPage _campCUDPage = new CampCUDPage();
-        private readonly CampsBrowserPage _campsBrowserPage = new CampsBrowserPage();
-        private readonly ControlPanelUserControl _controlPanelUserControl = new ControlPanelUserControl();
         public ObservableCollection<Camp> Camps { get; }
 
         [ObservableProperty]
