@@ -17,16 +17,10 @@ namespace MyMvvmApp.ViewModels
 
         [ObservableProperty]
         private object _currentView = new object();
-        public object CurrentView
-        {
-            get => _currentView;
-            set => SetProperty(ref _currentView, value);
-        }
 
         public MainViewModel()
         {
             Camps = new ObservableCollection<Camp>(_campRepo.GetAll());
-            _currentView = _controlPanelUserControl;
         }
 
         [RelayCommand(CanExecute = nameof(CanDeleteSelected))]
@@ -62,19 +56,16 @@ namespace MyMvvmApp.ViewModels
         [RelayCommand]
         private void ShowControlPanelView()
         {
-            CurrentView = _controlPanelUserControl;
         }
 
         [RelayCommand]
         private void ShowCampsBrowserView()
         {
-            CurrentView = _campsBrowserPage;
         }
 
         [RelayCommand]
         private void ShowCampCUDView()
         {
-            CurrentView = _campCUDPage;
         }
     }
 }
