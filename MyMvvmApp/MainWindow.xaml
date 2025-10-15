@@ -9,20 +9,12 @@
         xmlns:model="clr-namespace:MyMvvmApp.Models"
         xmlns:views="clr-namespace:MyMvvmApp.Views"
         mc:Ignorable="d"
-        Title="Nyári Tábor Foglaló desktop" Height="900" Width="1600">
+        Title="NyÃ¡ri TÃ¡bor FoglalÃ³ desktop" Height="900" Width="1600">
     <Window.DataContext>
         <viewmodel:MainViewModel />
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewmodel:CampsBrowserViewModel}">
-            <views:CampsBrowser />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodel:CampCUDViewModel}">
-            <views:CampCUD />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
-            <views:ControlPanelView />
-        </DataTemplate>
+        
     </Window.Resources>
     <StackPanel Margin="10">
         <Grid>
@@ -46,30 +38,30 @@
         </Grid>
         <DockPanel>
             <Menu x:Name="campContextMenu2">
-                <MenuItem Header="Fõmenüpont">
-                    <MenuItem Header="Vezérlõpult" />
-                    <MenuItem Header="Diákok" />
-                    <MenuItem Header="Vezérlõpult" Command="{Binding ShowControlPanalViewCommand}"></MenuItem>
-                    <MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}" ></MenuItem>
-                    <MenuItem Header="Osztályok" />
+                <MenuItem Header="FÅ‘menÃ¼pont">
+                    <MenuItem Header="VezÃ©rlÅ‘pult" />
+                    <MenuItem Header="DiÃ¡kok" />
+                    <MenuItem Header="VezÃ©rlÅ‘pult" Command="{Binding ShowControlPanalViewCommand}"></MenuItem>
+                    <MenuItem Header="DiÃ¡kok" Command="{Binding ShowStudentViewCommand}" ></MenuItem>
+                    <MenuItem Header="OsztÃ¡lyok" />
                 </MenuItem>
             </Menu>
         </DockPanel>
         <ContentControl Content="{Binding CurrentView}" />
-        <Label>Táborok</Label>
+        <Label>TÃ¡borok</Label>
         <ListView ItemsSource="{Binding Camps}"
                   SelectedItem="{Binding SelectedCamp, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Kezdés" DisplayMemberBinding="{Binding StartDate}" />
-                    <GridViewColumn Header="Befejezés" DisplayMemberBinding="{Binding StartDate}" />
+                    <GridViewColumn Header="KezdÃ©s" DisplayMemberBinding="{Binding StartDate}" />
+                    <GridViewColumn Header="BefejezÃ©s" DisplayMemberBinding="{Binding StartDate}" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Létrehozás"
+        <Button Content="LÃ©trehozÃ¡s"
                 Command="{Binding DeleteSelectedCommand}"
                 Margin="0,10,0,0" />
-        <Button Content="Törlés"
+        <Button Content="TÃ¶rlÃ©s"
                 Command="{Binding DeleteSelectedCommand}"
                 Margin="0,10,0,0" />
     </StackPanel>
