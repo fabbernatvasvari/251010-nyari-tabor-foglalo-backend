@@ -13,23 +13,14 @@ namespace MyMvvmApp.ViewModels
 
         private readonly CampRepo _campRepo = new CampRepo();
         private Camp? _selectedCamp;
-        private readonly CampCUDPage _campCUDPage = new CampCUDPage();
-        private readonly CampsBrowserPage _campsBrowserPage = new CampsBrowserPage();
-        private readonly ControlPanelUserControl _controlPanelUserControl = new ControlPanelUserControl();
         public ObservableCollection<Camp> Camps { get; }
 
         [ObservableProperty]
         private object _currentView = new object();
-        public object CurrentView
-        {
-            get => _currentView;
-            set => SetProperty(ref _currentView, value);
-        }
 
         public MainViewModel()
         {
             Camps = new ObservableCollection<Camp>(_campRepo.GetAll());
-            _currentView = _controlPanelUserControl;
         }
 
         [RelayCommand(CanExecute = nameof(CanDeleteSelected))]
@@ -65,19 +56,16 @@ namespace MyMvvmApp.ViewModels
         [RelayCommand]
         private void ShowControlPanelView()
         {
-            CurrentView = _controlPanelUserControl;
         }
 
         [RelayCommand]
         private void ShowCampsBrowserView()
         {
-            CurrentView = _campsBrowserPage;
         }
 
         [RelayCommand]
         private void ShowCampCUDView()
         {
-            CurrentView = _campCUDPage;
         }
     }
 }

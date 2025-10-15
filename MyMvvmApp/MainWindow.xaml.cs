@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,15 +9,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyMvvmApp;
+namespace SchoolClassManagment;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
-public partial class PlaceholderMainWindow : Window
+public partial class MainWindow : Window
 {
-    public PlaceholderMainWindow()
-    {
-        
-    }
+	public MainWindow()
+	{
+		//InitializeComponent();
+	}
 }

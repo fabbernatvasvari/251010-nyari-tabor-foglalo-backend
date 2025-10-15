@@ -1,4 +1,4 @@
-﻿<Window x:Class="MyMvvmApp.MainWindow"
+<Window x:Class="MyMvvmApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,67 +10,59 @@
         xmlns:views="clr-namespace:MyMvvmApp.Views"
         mc:Ignorable="d"
         Title="Nyári Tábor Foglaló desktop" Height="900" Width="1600">
-	<Window.DataContext>
-		<viewmodel:MainViewModel />
-	</Window.DataContext>
-	<Window.Resources>
-        <DataTemplate DataType="{x:Type viewmodel:CampsBrowserViewModel}">
-            <views:CampsBrowser />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodel:CampCUDViewModel}">
-            <views:CampCUD />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
-            <views:ControlPanelView />
-        </DataTemplate>
+    <Window.DataContext>
+        <viewmodel:MainViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        
     </Window.Resources>
-	<StackPanel Margin="10">
-		<Grid>
+    <StackPanel Margin="10">
+        <Grid>
             <Menu x:Name="campContextMenu">
-				<MenuItem Header="_File">
-					<MenuItem Header="_New" />
-					<MenuItem Header="_Open" />
-					<Separator />
-					<MenuItem Header="_Exit" />
-				</MenuItem>
-				<MenuItem Header="_Edit">
-					<MenuItem Header="_Cut" />
-					<MenuItem Header="_Copy" />
-					<MenuItem Header="_Paste" />
-				</MenuItem>
-			</Menu>
-			<TextBlock Text="{Binding Message}"
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open" />
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="_Cut" />
+                    <MenuItem Header="_Copy" />
+                    <MenuItem Header="_Paste" />
+                </MenuItem>
+            </Menu>
+            <TextBlock Text="{Binding Message}"
 					   VerticalAlignment="Center"
 					   HorizontalAlignment="Center"
 					   FontSize="20"/>
-		</Grid>
-		<DockPanel>
-			<Menu x:Name="campContextMenu2">
-				<MenuItem Header="Főmenüpont">
-					<MenuItem Header="Vezérlőpult" />
-					<MenuItem Header="Diákok" />
-					<MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanalViewCommand}"></MenuItem>
-					<MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}" ></MenuItem>
-					<MenuItem Header="Osztályok" />
-				</MenuItem>
-			</Menu>
-		</DockPanel>
-		<ContentControl Content="{Binding CurrentView}" />
-		<Label>Táborok</Label>
-		<ListView ItemsSource="{Binding Camps}"
+        </Grid>
+        <DockPanel>
+            <Menu x:Name="campContextMenu2">
+                <MenuItem Header="Főmenüpont">
+                    <MenuItem Header="Vezérlőpult" />
+                    <MenuItem Header="Diákok" />
+                    <MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanalViewCommand}"></MenuItem>
+                    <MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}" ></MenuItem>
+                    <MenuItem Header="Osztályok" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ContentControl Content="{Binding CurrentView}" />
+        <Label>Táborok</Label>
+        <ListView ItemsSource="{Binding Camps}"
                   SelectedItem="{Binding SelectedCamp, Mode=TwoWay}">
-			<ListView.View>
-				<GridView>
-					<GridViewColumn Header="Kezdés" DisplayMemberBinding="{Binding StartDate}" />
-					<GridViewColumn Header="Befejezés" DisplayMemberBinding="{Binding StartDate}" />
-				</GridView>
-			</ListView.View>
-		</ListView>
-		<Button Content="Létrehozás"
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Kezdés" DisplayMemberBinding="{Binding StartDate}" />
+                    <GridViewColumn Header="Befejezés" DisplayMemberBinding="{Binding StartDate}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Létrehozás"
                 Command="{Binding DeleteSelectedCommand}"
                 Margin="0,10,0,0" />
-		<Button Content="Törlés"
+        <Button Content="Törlés"
                 Command="{Binding DeleteSelectedCommand}"
                 Margin="0,10,0,0" />
-	</StackPanel>
+    </StackPanel>
 </Window>
