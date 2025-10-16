@@ -1,5 +1,4 @@
-﻿using System;
-namespace MyMvvmApp.Models
+﻿namespace TestProject1
 {
     public class Camp
     {
