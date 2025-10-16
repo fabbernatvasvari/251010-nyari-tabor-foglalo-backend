@@ -5,7 +5,7 @@ namespace MyMvvmApp.Models
     {
         private static int _nextId = 1;
 
-        public int Id { get; }
+        public int Guid { get; }
 
         private DateTime _startDate { get; set; } = DateTime.Today;
         private DateTime _endDate { get; set; } = DateTime.Today.AddDays(7);
@@ -14,7 +14,7 @@ namespace MyMvvmApp.Models
 
         public Camp()
         {
-            Id = _nextId++;
+            Guid = Interlocked.Increment(ref _nextId);
         }
 
         public Camp(DateTime startDate, DateTime endDate)
@@ -23,7 +23,7 @@ namespace MyMvvmApp.Models
             {
                 throw new ArgumentException("Dátumhiba: A befejezés dátuma nem lehet korábbi a kezdés dátumánál.");
             }
-            Id = _nextId++;
+            Guid = _nextId++;
             _startDate = startDate;
             _endDate = endDate;
         }
