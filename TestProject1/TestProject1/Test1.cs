@@ -6,7 +6,7 @@ namespace TestProject1
     public sealed class Test1
     {
         [TestMethod]
-        public void TestMethod1()
+        public static void TestMethod1()
         {
             // sima tábor
             Camp camp = new Camp();
@@ -16,8 +16,15 @@ namespace TestProject1
             Camp campEqualDates = new Camp(new DateTime(2025, 06, 16), new DateTime(2025, 06, 16));
             Assert.AreEqual("Camp named Summer Camp Booker between 2025-06-16 and 2025-06-16", campEqualDates.ToString());
             // hibás dátum
-            Camp campInvalidDates = new Camp(new DateTime(2025, 06, 23), new DateTime(2025, 06, 16));
-            Assert.ThrowsException<ArgumentException>(() => campInvalidDates.ToString());
+            Camp campInvalidDates = null;
+            try
+            {
+                campInvalidDates = new Camp(new DateTime(2025, 06, 23), new DateTime(2025, 06, 16));
+            } catch (ArgumentException ae)
+            {
+                Console.Error.WriteLine("Hiba elkapva: " + ae.Message);
+            }
+            Assert.IsNull(campInvalidDates);
         }
     }
 }
