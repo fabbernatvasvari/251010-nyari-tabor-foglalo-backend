@@ -7,8 +7,8 @@ namespace MyMvvmApp.Models
 
         public int Guid { get; }
 
-        private DateTime _startDate { get; set; } = DateTime.Today;
-        private DateTime _endDate { get; set; } = DateTime.Today.AddDays(7);
+        public DateTime StartDate { get; set; } = DateTime.Today;
+        public DateTime EndDate { get; set; } = DateTime.Today.AddDays(7);
 
         public string Name = "Summer Camp Booker";
 
@@ -23,9 +23,9 @@ namespace MyMvvmApp.Models
             {
                 throw new ArgumentException("Dátumhiba: A befejezés dátuma nem lehet korábbi a kezdés dátumánál.");
             }
-            Guid = _nextId++;
-            _startDate = startDate;
-            _endDate = endDate;
+            Guid = Interlocked.Increment(ref _nextId);
+            StartDate = startDate;
+            EndDate = endDate;
         }
 
         public static void ResetIdCounter()
@@ -35,7 +35,7 @@ namespace MyMvvmApp.Models
 
         public override string ToString()
         {
-            return $"Camp named {Name} between {_startDate:yyyy-MM-dd} and {_endDate:yyyy-MM-dd}";
+            return $"Camp named {Name} between {StartDate:yyyy-MM-dd} and {EndDate:yyyy-MM-dd}";
         }
     }
 }
